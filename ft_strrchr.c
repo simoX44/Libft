@@ -1,14 +1,14 @@
 #include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*p;
-	unsigned char	f;
-	unsigned int	i;
+	unsigned char *p;
+	unsigned char f;
+	char	*stck;
 
-	i = 0;
 	p = (unsigned char *)s;
 	f = (unsigned char)c;
+	stck = NULL;
 	if (f == '\0')
 	{
 		while (*p)
@@ -18,8 +18,10 @@ char	*ft_strchr(const char *s, int c)
 	while (*p)
 	{
 		if (*p == f)
-			return ((char *)p);
+		{
+			stck = (char *)p;
+		}
 		p++;
 	}
-	return (NULL);
+	return (stck);
 }

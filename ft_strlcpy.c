@@ -1,6 +1,6 @@
  #include <stddef.h>
 
-size_t	strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
  {
 	size_t	len_s;
 	size_t	i;

@@ -8,7 +8,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_2;
 	size_t	i;
 
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return NULL;
 	len_1 = ft_strlen(s1);
 	len_2 = ft_strlen(s2);

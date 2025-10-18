@@ -17,24 +17,31 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
 	  ft_memcmp.c ft_strnstr.c ft_atoi.c ft_strdup.c ft_calloc.c  ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c\
 	  ft_split.c ft_itoa.c ft_strtrim.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 	  ft_putnbr_fd.c
+
+BONUS_SRC = ft_lstnew.c ft_lstadd_front.c
 NAME = libft.a
+
 OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	ar src $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAG) -g -c $< -o $@
 
-clean:
-	rm -rf $(OBJ)
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
-fclean:
-	rm -rf $(OBJ) $(NAME)
+clean:
+	rm -rf $(OBJ) $(BONUS_OBJ)
+
+fclean: clean
+	rm -rf $(NAME)
 
 re: fclean all
 
 test: $(NAME)
-	$(CC) $(NAME) -g main.c $(NAME)
+	$(CC) -g main.c $(NAME)

@@ -11,11 +11,12 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *s;
-	unsigned char *d;
-	size_t	i;
+	unsigned char	*s;
+	unsigned char	*d;
+	size_t			i;
 
 	i = 0;
 	s = (unsigned char *)src;
@@ -27,15 +28,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			d[i] = s[i];
 			i++;
 		}
-
 	}
 	else if (d > s)
 	{
 		while (n > 0)
 		{
-			d[n-1] = s[n-1];
+			d[n - 1] = s[n - 1];
 			n--;
 		}
 	}
-	return (dest);	
+	return (dest);
 }

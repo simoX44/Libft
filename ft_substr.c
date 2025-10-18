@@ -24,9 +24,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	len_s = ft_strlen(s);
 	if (len == 0 || *s == '\0' || start >= len_s)
 		return (ft_strdup(""));
-	// lens_s = 5 // start = 3 // len = 5
-	size = len_s - start;  // size = 2
-	if (size > len)  // 2 > 5 no if yes replace size whit len 
+	size = len_s - start;
+	if (size > len)
 		size = len;
 	subs = malloc(sizeof(char) * (size + 1));
 	if (!subs)

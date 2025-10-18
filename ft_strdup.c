@@ -12,6 +12,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+
 char	*ft_strdup(const char *s)
 {
 	char	*cpy;
@@ -23,7 +24,7 @@ char	*ft_strdup(const char *s)
 		len++;
 	cpy = malloc(sizeof(char) * len + 1);
 	if (!cpy)
-		return NULL;
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

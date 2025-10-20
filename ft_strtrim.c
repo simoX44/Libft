@@ -40,11 +40,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len_s;
 
 	if (s1 == NULL || set == NULL)
-	{
-		if (set == NULL)
-			return (ft_strdup(s1));
 		return (NULL);
-	}
+	if (set == NULL)
+		return (ft_strdup(s1));
 	if (*s1 == '\0')
 		return (ft_strdup(""));
 	len_s = ft_strlen(s1);
